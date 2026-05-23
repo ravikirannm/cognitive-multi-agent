@@ -30,6 +30,7 @@ header p {
   color: #4b5563;
 }
 
+/* ── Controls ── */
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -45,16 +46,127 @@ button {
   color: white;
   cursor: pointer;
   font-weight: 600;
+  transition: opacity 0.15s, background 0.15s;
 }
 
-button:hover {
-  opacity: 0.95;
+button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 button.danger {
   background: #dc2626;
 }
 
+/* ── Progress panel ── */
+.progress-panel {
+  background: white;
+  border-radius: 24px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 12px rgba(15, 23, 42, 0.08);
+  margin-bottom: 24px;
+}
+
+.progress-panel h2 {
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.running-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: #e0e7ff;
+  color: #4338ca;
+  border-radius: 999px;
+  padding: 2px 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.step-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #6b7280;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+
+.step-item.step-running {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.step-item.step-done {
+  color: #16a34a;
+}
+
+.step-item.step-error {
+  color: #dc2626;
+}
+
+/* Step status icons */
+span.step-idle {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  flex-shrink: 0;
+}
+
+.step-done {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.step-error {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+span.step-idle {
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.step-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #bfdbfe;
+  border-top-color: #3b82f6;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Status + notes panel ── */
 .panel {
   display: grid;
   grid-template-columns: minmax(240px, 320px) 1fr;
@@ -105,10 +217,11 @@ footer {
   color: #475569;
   font-size: 0.95rem;
 }
+
 .ellipsis-pre {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Change this to the number of lines you want to show */
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-    white-space: pre-wrap; /* Allows the JSON newlines to respect the clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: pre-wrap;
 }
