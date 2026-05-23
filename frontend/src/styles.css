@@ -1,0 +1,114 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, sans-serif;
+  background: #eef2ff;
+  color: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 8px 0 24px;
+  color: #4b5563;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  background: #4338ca;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.status-box,
+.notes-box,
+.content-box {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 1px 12px rgba(15, 23, 42, 0.08);
+}
+
+.status-box ul,
+.notes-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notes-box button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: #1f2937;
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+
+.notes-box button.selected {
+  background: #e0e7ff;
+}
+
+.content-box pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 16px;
+  min-height: 260px;
+}
+
+footer {
+  color: #475569;
+  font-size: 0.95rem;
+}
+.ellipsis-pre {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Change this to the number of lines you want to show */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    white-space: pre-wrap; /* Allows the JSON newlines to respect the clamp */
+}

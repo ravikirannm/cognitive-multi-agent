@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.env
+.env.*
+*.sqlite3
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+/dist
+/build
+/.vite
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Docker
+*.log
+*.pid
+
+# Notes and runtime state
+backend/notes/*.json
+backend/notes/*.log

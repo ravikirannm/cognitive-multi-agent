@@ -1,0 +1,5 @@
+Flask>=2.3.0
+Flask-Cors>=3.0.10
+requests>=2.31.0
+ddgs
+beautifulsoup4>=4.12.2
